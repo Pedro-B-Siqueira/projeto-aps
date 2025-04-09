@@ -2,12 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>ProjetoAps</title>
+  <title>Dados a MILHÃO</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="logo.ico">
 </head>
 <body>
-  <app-root></app-root>
+  <header id="cabecalho">
+    <div class="container-header">
+      <div class="container-logo">
+        <img id="logo" src="logo.png" alt="Logo">
+        <p id="nome">Dados a MILHÃO</p>
+      </div>
+      <div class="slogan">
+        <p>Sua principal fonte de informações sobre milho!</p>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <app-root></app-root>
+  </main>
+  <footer id="rodape">
+    <p>© 2025 Dados a Milhão. Todos os direitos reservados. Este site é de propriedade da equipe <span class="pitufos">Los Pitufos</span> Team.</p>
+  </footer>
+
+  <script>
+    // Quando a página terminar de carregar
+    document.addEventListener('DOMContentLoaded', () => {
+      const logo = document.getElementById('logo');
+  
+      if (logo) {
+        logo.addEventListener('click', (event) => {
+          event.preventDefault();
+          // Atualiza a URL sem recarregar a página
+          window.history.pushState({}, '', '/');
+          // Dispara o evento para que o Angular atualize a view
+          window.dispatchEvent(new PopStateEvent('popstate'));
+        });
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const pitufos = document.querySelector('.pitufos');
+    const imagem = document.getElementById('imagem-animada');
+
+    pitufos.addEventListener('click', () => {
+      imagem.classList.add('mover');
+
+      // Remove a animação depois que termina, para poder repetir depois
+      setTimeout(() => {
+        imagem.classList.remove('mover');
+      }, 4000); // tempo da animação
+    });
+  });
+  </script>
+
+  <img id="imagem-animada" src="esmilinguido.jpg" alt="esmilinguido" />
+
 </body>
 </html>

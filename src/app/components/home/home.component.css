@@ -1,0 +1,112 @@
+
+  /* --- ÁREA PRINCIPAL --- */
+  #main {
+    grid-area: main; /* Define a área do grid */
+    background-image: linear-gradient(#ffffff 58%, #5DB41A); /* Gradiente do branco para verde */
+    padding: 5vh 0; /* Espaço interno superior e inferior */
+  }
+  
+  .conteudo {
+    position: relative; /* Necessário para posicionar elementos internos absolutamente */
+    width: 60vw; /* Largura da área de conteúdo */
+    min-height: 72.9vh; /* Altura mínima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    border-radius: 1vw; /* Bordas arredondadas */
+    overflow: hidden; /* Esconde conteúdo que extrapolar o limite */
+    border: 0.3vh solid #005C00; /* Borda sólida verde escura */
+    background-color: transparent; /* Sem cor de fundo fixa */
+  }
+  
+  .container-conteudo-texto {
+    position: relative; /* Permite z-index funcionar */
+    z-index: 2; /* Garante que fique acima da imagem */
+    background-color: #E4C40B; /* Amarelo milho */
+    width: 70%; /* O texto ocupa 70% da largura da caixa */
+    min-height: 72.9vh; /* Altura mínima */
+    padding: 2vh 2vw; /* Espaçamento interno */
+    box-sizing: border-box; /* Inclui padding na largura total */
+    border-radius: 1vw; /* Bordas arredondadas */
+    display: flex; /* Layout flexível */
+    flex-direction: column; /* Empilha os filhos verticalmente */
+    justify-content: space-between; /* Espaço entre título, texto e botão */
+  }
+  
+  .imagem-milho {
+    position: absolute; /* Posiciona sobreposta à direita */
+    top: 0;
+    right: 0;
+    width: 50%; /* Ocupa metade da largura */
+    height: 100%; /* Toda a altura do container */
+    object-fit: cover; /* Cobre toda a área mantendo proporção */
+    z-index: 1; /* Fica atrás do texto */
+  }
+  
+  .titulo {
+    font-weight: bold;
+    font-size: 2.4vw; /* Tamanho do título proporcional */
+    margin-bottom: 1vh; /* Espaço inferior */
+  }
+  
+  .texto {
+    font-size: 1.4vw;
+    font-weight: 450;
+    color: #000; /* Texto preto */
+    flex: 1; /* Ocupa o espaço restante */
+    margin-bottom: 2vh;
+  }
+  
+  .botao {
+    background-color: #5DB41A; /* Verde vivo */
+    color: white;
+    padding: 1vh 2vw;
+    border: none;
+    border-radius: 0.5vw;
+    cursor: pointer; /* Muda cursor ao passar por cima */
+    font-size: 1.2vw;
+    width: fit-content; /* Só ocupa o espaço necessário */
+    transition: background-color 0.3s ease; /* Animação suave no hover */
+  }
+  
+  .botao:hover {
+    background-color: #005C00; /* Fica verde escuro ao passar o mouse */
+  }
+  
+  
+  /* --------------------------- */
+  /* 📱 RESPONSIVIDADE (TELAS PEQUENAS) 📱 */
+  /* --------------------------- */
+  @media (max-width: 768px) {
+    .conteudo {
+      width: 90vw; /* Quase toda a tela */
+      min-height: auto; /* Altura flexível */
+      flex-direction: column;
+    }
+  
+    .container-conteudo-texto {
+      width: 100%;
+      border-radius: 1vh;
+      padding: 4vh 4vw;
+    }
+  
+    .imagem-milho {
+      position: relative; /* Deixa a imagem fluir no layout */
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      margin-top: 2vh;
+    }
+  
+    .titulo {
+      font-size: 5vw;
+    }
+  
+    .texto {
+      font-size: 4vw;
+    }
+  
+    .botao {
+      font-size: 4vw;
+      padding: 1.5vh 4vw;
+    }
+  }
+  

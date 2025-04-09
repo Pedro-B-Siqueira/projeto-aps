@@ -1,1 +1,227 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    padding: 0;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* --- LAYOUT GERAL DA PÁGINA --- */
+.container {
+    display: grid; /* Usa grid layout para estruturar a página */
+    grid-template-areas: "header" "main" "footer"; /* Define as áreas do grid */
+    grid-template-rows: auto 1fr auto; /* Altura automática para header/footer e flexível para o main */
+    min-height: 100vh; /* Faz a altura mínima ocupar toda a tela */
+  }
+  
+  /* --- CABEÇALHO / HEADER --- */
+  #cabecalho {
+    grid-area: header; /* Define a área do grid */
+    background-color: black; /* Cor de fundo preta */
+    color: white; /* Cor do texto branca */
+    padding: 1.5vh 2vw; /* Espaçamento interno (vertical x horizontal) */
+  }
+  
+  .container-header {
+    display: flex; /* Layout flexível em linha */
+    justify-content: space-between; /* Espaço entre os itens (logo de um lado, texto do outro) */
+    align-items: center; /* Centraliza verticalmente */
+    flex-wrap: wrap; /* Permite quebra de linha quando necessário */
+  }
+  
+  .container-logo {
+    display: flex; /* Flex para alinhar logo + nome lado a lado */
+    align-items: center; /* Centraliza verticalmente */
+    gap: 1vw; /* Espaço horizontal entre logo e nome */
+  }
+  
+  #logo {
+    height: 8vh; /* Altura do logotipo proporcional à altura da tela */
+    transition: cursor 0.3s ease;;
+  }
+  #logo:hover{
+    cursor: pointer;
+  }
+  
+  #nome {
+    font-weight: bold; /* Deixa o nome em negrito */
+    font-size: 2.4vw; /* Tamanho da fonte proporcional à largura da tela */
+    white-space: nowrap; /* Impede quebra de linha no nome */
+  }
+  
+  .slogan p {
+    font-size: 1.5vw; /* Tamanho da fonte do slogan */
+    margin: 0; /* Remove margem padrão do <p> */
+    padding-top: 0.5vh; /* Espaçamento superior */
+  }
+  
+  /* --- ÁREA PRINCIPAL --- */
+  #main {
+    grid-area: main; /* Define a área do grid */
+    background-image: linear-gradient(#ffffff 58%, #5DB41A); /* Gradiente do branco para verde */
+    padding: 5vh 0; /* Espaço interno superior e inferior */
+  }
+  
+  .conteudo {
+    position: relative; /* Necessário para posicionar elementos internos absolutamente */
+    width: 60vw; /* Largura da área de conteúdo */
+    min-height: 60vh; /* Altura mínima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    border-radius: 1vw; /* Bordas arredondadas */
+    overflow: hidden; /* Esconde conteúdo que extrapolar o limite */
+    border: 0.3vh solid #005C00; /* Borda sólida verde escura */
+    background-color: transparent; /* Sem cor de fundo fixa */
+  }
+  
+  .container-conteudo-texto {
+    position: relative; /* Permite z-index funcionar */
+    z-index: 2; /* Garante que fique acima da imagem */
+    background-color: #E4C40B; /* Amarelo milho */
+    width: 70%; /* O texto ocupa 70% da largura da caixa */
+    min-height: 60vh; /* Altura mínima */
+    padding: 2vh 2vw; /* Espaçamento interno */
+    box-sizing: border-box; /* Inclui padding na largura total */
+    border-radius: 1vw; /* Bordas arredondadas */
+    display: flex; /* Layout flexível */
+    flex-direction: column; /* Empilha os filhos verticalmente */
+    justify-content: space-between; /* Espaço entre título, texto e botão */
+  }
+  
+  .imagem-milho {
+    position: absolute; /* Posiciona sobreposta à direita */
+    top: 0;
+    right: 0;
+    width: 50%; /* Ocupa metade da largura */
+    height: 100%; /* Toda a altura do container */
+    object-fit: cover; /* Cobre toda a área mantendo proporção */
+    z-index: 1; /* Fica atrás do texto */
+  }
+  
+  .titulo {
+    font-weight: bold;
+    font-size: 2.4vw; /* Tamanho do título proporcional */
+    margin-bottom: 1vh; /* Espaço inferior */
+  }
+  
+  .texto {
+    font-size: 1.4vw;
+    font-weight: 450;
+    color: #000; /* Texto preto */
+    flex: 1; /* Ocupa o espaço restante */
+    margin-bottom: 2vh;
+  }
+  
+  .botao {
+    background-color: #5DB41A; /* Verde vivo */
+    color: white;
+    padding: 1vh 2vw;
+    border: none;
+    border-radius: 0.5vw;
+    cursor: pointer; /* Muda cursor ao passar por cima */
+    font-size: 1.2vw;
+    width: fit-content; /* Só ocupa o espaço necessário */
+    transition: background-color 0.3s ease; /* Animação suave no hover */
+  }
+  
+  .botao:hover {
+    background-color: #005C00; /* Fica verde escuro ao passar o mouse */
+  }
+  
+  /* --- RODAPÉ --- */
+  #rodape {
+    grid-area: footer;
+    background-color: #005C00;
+    color: white;
+    text-align: center;
+    padding: 1.5vh 2vw;
+    font-size: 1vw;
+  }
+
+  /* Estilo base */
+  .pitufos {
+    transition: color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  /* Quando o mouse passar por cima */
+  .pitufos:hover {
+    color: #007bff; /* Azul */
+  }
+
+  #imagem-animada {
+    position: fixed;
+    top: 50%;
+    left: -200px; /* Começa fora da tela à esquerda */
+    transform: translateY(-50%);
+    height: 60vh;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    transition: left 2s linear, opacity 0.1s ease;
+  }
+  #imagem-animada.mover {
+    left: 105vw; /* Vai até o fim da tela */
+    opacity: 1;
+  }
+  
+  
+  
+  /* --------------------------- */
+  /* 📱 RESPONSIVIDADE (TELAS PEQUENAS) 📱 */
+  /* --------------------------- */
+  @media (max-width: 768px) {
+    .container-header {
+      flex-direction: column; /* Empilha logo e texto */
+      align-items: flex-start; /* Alinha à esquerda */
+      gap: 1vh; /* Espaço entre eles */
+    }
+  
+    #logo {
+      height: 6vh; /* Reduz a altura do logo */
+    }
+  
+    #nome {
+      font-size: 5vw; /* Fonte maior proporcional à tela pequena */
+    }
+  
+    .slogan p {
+      font-size: 4vw;
+    }
+  
+    .conteudo {
+      width: 90vw; /* Quase toda a tela */
+      min-height: auto; /* Altura flexível */
+      flex-direction: column;
+    }
+  
+    .container-conteudo-texto {
+      width: 100%;
+      border-radius: 1vh;
+      padding: 4vh 4vw;
+    }
+  
+    .imagem-milho {
+      position: relative; /* Deixa a imagem fluir no layout */
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      margin-top: 2vh;
+    }
+  
+    .titulo {
+      font-size: 5vw;
+    }
+  
+    .texto {
+      font-size: 4vw;
+    }
+  
+    .botao {
+      font-size: 4vw;
+      padding: 1.5vh 4vw;
+    }
+  
+    #rodape {
+      font-size: 3vw;
+      padding: 2vh 4vw;
+    }
+  }
+  

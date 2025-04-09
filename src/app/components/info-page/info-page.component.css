@@ -1,0 +1,135 @@
+.pagina-informacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+    padding: 4vh 4vw;
+    min-height: 100vh;
+  }
+  
+  /* Seções de texto */
+  .secao.texto {
+    background-color: #E4C40B;
+    border: 2px solid #005C00;
+    border-radius: 1vw;
+    padding: 3vh 3vw;
+    color: #000;
+    box-shadow: 0 0.3vh 0.8vh rgba(0, 0, 0, 0.2);
+  }
+  
+  .secao.texto h2 {
+    margin-bottom: 2vh;
+    font-size: 2vw;
+  }
+  
+  .secao.texto p {
+    font-size: 1.2vw;
+    line-height: 1.6;
+  }
+
+  .fonte-texto {
+    font-size: 0.8vw;
+    font-style: italic;
+    color: #333;
+    text-align: right;
+    margin-top: 2vh;
+  }
+  
+  .fonte-texto a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .fonte-texto a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Seções de imagem */
+  .secao.imagem img {
+    width: 100%;
+    max-height: 30vh;
+    object-fit: cover;
+    border-radius: 1vw;
+    box-shadow: 0 0.2vh 0.6vh rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Sumário fixo */
+  .sumario-container {
+    float: right;
+    background-color: #ffffffcc;
+    padding: 1em;
+    margin-top: 1em;
+    margin-right: 2em;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 0.95em;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    top: 10px;
+    z-index: 10;
+  }
+  
+  .sumario-container h3 {
+    margin-top: 0;
+    font-size: 1em;
+  }
+  
+  .sumario-container ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .sumario-container ul li {
+    margin: 0.5em 0;
+  }
+  
+  .sumario-container a {
+    color: #005C00;
+    text-decoration: none;
+  }
+  
+  .sumario-container a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Botão "voltar ao topo" com transição suave */
+  .voltar-topo {
+    position: fixed;
+    bottom: 3vh;
+    right: 2vw;
+    background-color: #5DB41A;
+    color: white;
+    border: none;
+    padding: 1vh 2vw;
+    border: solid #005C00 2px;
+    border-radius: 5vw;
+    font-size: 1.2vw;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 0.3vh 0.6vh rgba(0, 0, 0, 0.2);
+    
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  
+  .voltar-topo.visivel {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  
+  .voltar-topo:hover {
+    border: solid #5DB41A 2px;
+    background-color: #005C00;
+  }
+  
+  @media (max-width: 768px) {
+    .secao.texto h2 {
+      font-size: 5vw;
+    }
+  
+    .secao.texto p {
+      font-size: 4vw;
+    }
+  }
+  
