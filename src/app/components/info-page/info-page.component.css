@@ -131,5 +131,9 @@
     .secao.texto p {
       font-size: 4vw;
     }
+
+    .fonte-texto{
+      font-size: 2vh;
+    }
   }
   
