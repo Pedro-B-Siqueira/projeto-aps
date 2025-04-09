@@ -80,6 +80,7 @@
       width: 90vw; /* Quase toda a tela */
       min-height: auto; /* Altura flexível */
       flex-direction: column;
+      overflow: hidden;
     }
   
     .container-conteudo-texto {
@@ -89,11 +90,14 @@
     }
   
     .imagem-milho {
-      position: relative; /* Deixa a imagem fluir no layout */
+      position: relative;
       width: 100%;
       height: auto;
       object-fit: cover;
-      margin-top: 2vh;
+      margin-top: 0;
+      display: block;
+      border-bottom-left-radius: 1vh;
+      border-bottom-right-radius: 1vh;
     }
   
     .titulo {
