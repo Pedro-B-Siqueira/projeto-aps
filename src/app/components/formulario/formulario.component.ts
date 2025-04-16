@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
 @Component({
@@ -37,7 +38,10 @@ export class FormularioComponent {
     }
   
     event.target.value = valor;
-    
+    this.telefone = valor;
+    console.log('valor fmtTele: ', this.telefone.trim())
+    console.log('valor fmtTeleSTrim: ', this.telefone)
+
   }
 
   nomePreenchido(): boolean {
@@ -52,16 +56,22 @@ export class FormularioComponent {
     this.email = event.target.value.trim();
   }
 
-  todosCamposPreenchidos(): boolean {
-    return (
-      this.nome.trim() !== '' &&
-      this.email.trim() !== '' &&
-      this.telefone.trim().length === 14
-    )
+  todosCamposPreenchidos(){
+    if (this.nome.trim() !== '' &&
+    this.email.trim() !== '' &&
+    this.telefone.trim().length !== 14){
+      console.log('valor: ', this.telefone.trim())
+      this.Voltar()
+    }
   }
+
+  
 
   Voltar() {
     this.router.navigate(['']);
+    window.alert('Seu contato foi salvo.');
   }
 }
+
+
 

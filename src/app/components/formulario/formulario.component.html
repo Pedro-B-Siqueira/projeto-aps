@@ -1,6 +1,6 @@
 <div class="container">
     <div class="formulario">
-        <h2>Forneça alguns dados abaixo para contato</h2>
+        <h2>Forneça alguns dados abaixo para contato:</h2>
     
         <form>
         <label class="nome">Nome:</label>
@@ -34,14 +34,19 @@
             maxlength="14"
 />
     
-        <label class="checkbox-label">
-            <input type="checkbox" />
+        <label class="checkbox-label" for="checkbox">
+            <input type="checkbox" required placeholder="">
             Eu autorizo o uso dos meu dados fornecidos acima para que a empresa me contate.
         </label>
-    
-        <button class="botaoE" (click)="Voltar()">Enviar</button>
+        
+        @if (this.nome.trim() !== '' &&
+            this.email.trim() !== '' &&
+            this.telefone.trim().length == 14){
+            <button class="botaoE" (click)="Voltar()">Enviar</button>
+        } @else {
+            <button class="botaoED" disabled>Enviar</button>
+        }
+        
         </form>
     </div>
 </div>
-
-  

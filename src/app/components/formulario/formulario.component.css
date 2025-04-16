@@ -1,5 +1,5 @@
 .container {
-    min-height: 100vh;}
+    min-height: 80vh;}
 
 .formulario {
     background-color: #e4c40b;
@@ -64,8 +64,10 @@ input[type="tel"] {
     display: flex;
     align-items: center;
     font-size: 0.95em;
-    gap: 0.5vw;
+    gap: 0.5em;
     margin-top: 1vh;
+    flex-wrap: nowrap;
+    flex-direction: row;
 }
 
 .botaoE {
@@ -84,3 +86,63 @@ input[type="tel"] {
 .botaoE:hover {
     background-color: #4a9e50;
 }
+
+.botaoED {
+    background-color: #888888;
+    color: white;
+    padding: 1vh 2vw;
+    border: none;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    font-size: 1em;
+    width: fit-content;
+    margin-top: 2vh;
+    transition: background-color 0.3s ease;
+}
+
+.botaoED:hover {
+    background-color: #afafaf;
+}
+
+@media (max-width: 768px) {
+    .formulario {
+        padding: 4vh 5vw;
+        border-radius: 3vw;
+        margin: 3vh auto;
+        width: 90%;
+        box-sizing: border-box;
+      }
+    
+      .formulario h2 {
+        font-size: 1.3em;
+      }
+    
+      input[type="nome"],
+      input[type="email"],
+      input[type="tel"] {
+        font-size: 0.95em;
+        padding: 1.2vh;
+        box-sizing: border-box;
+      }
+    
+      .telefone-input {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1vh;
+      }
+    
+      .checkbox-label {
+        font-size: 0.9em;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        gap: 2vw;
+        align-items: center;
+      }
+    
+      .botaoE,
+      .botaoED {
+        width: 100%;
+        text-align: center;
+        font-size: 1em;
+      }
+    }
