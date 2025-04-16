@@ -70,7 +70,29 @@
   .botao:hover {
     background-color: #005C00; /* Fica verde escuro ao passar o mouse */
   }
+
+  .botao2 {
+    background-color: #5DB41A;
+    color: white;
+    padding: 1vh 2vw;
+    border: none;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    font-size: 1.2vw;
+    width: fit-content;
+    transition: background-color 0.3s ease;
+  }
   
+  .botao2:hover {
+    background-color: #005C00;
+  }
+
+  .botoes-alinhados{
+    display: flex;
+    gap: 14vw;
+    justify-content: flex-start;
+    margin: 1vh;
+  }
   
   /* --------------------------- */
   /* 📱 RESPONSIVIDADE (TELAS PEQUENAS) 📱 */

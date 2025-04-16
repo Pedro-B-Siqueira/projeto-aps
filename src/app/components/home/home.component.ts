@@ -16,4 +16,7 @@ export class HomeComponent {
   trocarPaginaHome() {
     this.router.navigate(['']);
   }
+  trocarPagFormulario() {
+    this.router.navigate(['/formulario']);
+  }
 }

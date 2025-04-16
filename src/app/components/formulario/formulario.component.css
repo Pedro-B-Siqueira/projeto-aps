@@ -1,0 +1,86 @@
+.container {
+    min-height: 100vh;}
+
+.formulario {
+    background-color: #e4c40b;
+    border: 2px solid #005c00;
+    border-radius: 1.5vw;
+    padding: 3vh 4vw;
+    max-width: 700px;
+    margin: 5vh auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formulario h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 2vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 1vh;
+}
+
+input[type="nome"],
+input[type="email"],
+input[type="tel"] {
+  padding: 1vh;
+  border: none;
+  border-radius: 0.5vw;
+  background-color: #ccc;
+  font-size: 1em;
+  width: 100%;
+}
+
+
+.telefone-input {
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+}
+
+.telefone-input img {
+    height: 3vh;
+    border-radius: 0.2vw;
+}
+
+.telefone-input .ddd {
+    background-color: white;
+    padding: 0.5vh 0.8vw;
+    border-radius: 0.5vw;
+    font-weight: bold;
+    border: 1px solid #ccc;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    font-size: 0.95em;
+    gap: 0.5vw;
+    margin-top: 1vh;
+}
+
+.botaoE {
+  background-color: #5db41a;
+  color: white;
+  padding: 1vh 2vw;
+  border: none;
+  border-radius: 0.5vw;
+  cursor: pointer;
+  font-size: 1em;
+  width: fit-content;
+  margin-top: 2vh;
+  transition: background-color 0.3s ease;
+}
+
+.botaoE:hover {
+    background-color: #4a9e50;
+}
