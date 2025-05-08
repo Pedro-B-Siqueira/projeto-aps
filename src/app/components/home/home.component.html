@@ -1,21 +1,27 @@
-<div class="conteudo">
-    <a (click)="trocarPaginaHome()"><img class="imagem-milho" src="milho.png" alt="Imagem de milho"></a>
-    <div class="container-conteudo-texto">
-        <div class="titulo">A importância do milho</div>
-            <div class="texto">
-            O milho é um dos cereais mais importantes do mundo, essencial para a alimentação humana e animal.
-            Rico em carboidratos, fibras e vitaminas, ele fornece energia e nutrientes fundamentais. Além disso,
-            é base para inúmeros produtos industriais — desde alimentos processados até biocombustíveis.
-            Sua versatilidade e alto rendimento tornam o milho vital para a segurança alimentar e o desenvolvimento
-            econômico de muitos países.
-            </div>
-        
-        <div class="botoes-alinhados">
-            <button class="botao" (click)="trocarPagina()">Confira mais!</button>
-            <button class="botao" (click)="trocarPagFormulario()">Contate-nos!</button>
-        </div>
-
-        
+<div class="conteudo-milho">
+    <img src="placeholdermilho5.jpg" alt="Imagem de milho" class="imagem-topo" />
+  
+    <h1 class="titulo-principal">A IMPORTÂNCIA DO MILHO</h1>
+  
+    <div class="container-assuntos">
+      <div class="assunto">
+        <h2>Alimento Básico no Mundo Todo</h2>
+        <p>O milho é uma das principais fontes de alimento no mundo, usado em pratos, farinhas e cereais consumidos diariamente.</p>
+      </div>
+      <div class="assunto">
+        <h2>Matéria-Prima Sustentável</h2>
+        <p>Além da alimentação, o milho é usado na produção de biocombustíveis, plásticos biodegradáveis e ração animal.</p>
+      </div>
+      <div class="assunto">
+        <h2>Gerador de Empregos e Renda</h2>
+        <p>A cadeia produtiva do milho movimenta a economia, gerando milhões de empregos no campo e na indústria.</p>
+      </div>
+    </div>
+  
+    <!-- Botões abaixo dos assuntos -->
+    <div class="botoes-abaixo">
+      <button class="botao" (click)="trocarPagina()">Confira mais</button>
+      <button class="botao" (click)="trocarPagFormulario()">Entre em contato</button>
     </div>
 </div>
   

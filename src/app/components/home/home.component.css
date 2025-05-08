@@ -1,138 +1,146 @@
+/* Área principal com fundo degradê */
+.conteudo-milho {
+  padding-bottom: 5vh;
+  text-align: center;
+}
 
-  /* --- ÁREA PRINCIPAL --- */
-  #main {
-    grid-area: main; /* Define a área do grid */
-    background-image: linear-gradient(#ffffff 58%, #5DB41A); /* Gradiente do branco para verde */
-    padding: 5vh 0; /* Espaço interno superior e inferior */
+/* Imagem de milho no topo */
+.imagem-topo {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+/* Título principal */
+.titulo-principal {
+  font-size: 3vw;
+  font-weight: bold;
+  margin: 3vh 0;
+  color: #000;
+  text-align: center;
+}
+
+/* Container com os 3 assuntos lado a lado */
+.container-assuntos {
+  display: flex;
+  justify-content: center;
+  gap: 3vw;
+  padding: 0 5vw;
+  flex-wrap: wrap;
+}
+
+/* Cada bloco de assunto */
+.assunto {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2vh 2vw;
+  border-radius: 1vw;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  flex: 1 1 25%;
+  max-width: 300px;
+  min-width: 250px;
+}
+
+/* Título de cada bloco */
+.assunto h2 {
+  font-size: 1.5vw;
+  margin-bottom: 1vh;
+  color: #003300;
+}
+
+/* Texto do bloco */
+.assunto p {
+  font-size: 1vw;
+  color: #000;
+}
+
+/* Container dos botões */
+.botoes-abaixo {
+  margin-top: 4vh;
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+}
+
+/* Botões gerais */
+.botao {
+  background-color: #5DB41A;
+  color: white;
+  padding: 1vh 2vw;
+  border: none;
+  border-radius: 0.5vw;
+  cursor: pointer;
+  font-size: 1vw;
+  transition: background-color 0.3s ease;
+}
+
+.botao:hover {
+  background-color: #005C00;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .titulo-principal {
+    font-size: 6vw;
   }
-  
-  .conteudo {
-    position: relative; /* Necessário para posicionar elementos internos absolutamente */
-    width: 60vw; /* Largura da área de conteúdo */
-    min-height: 72.9vh; /* Altura mínima */
-    margin: 0 auto; /* Centraliza horizontalmente */
-    border-radius: 1vw; /* Bordas arredondadas */
-    overflow: hidden; /* Esconde conteúdo que extrapolar o limite */
-    border: 0.3vh solid #005C00; /* Borda sólida verde escura */
-    background-color: transparent; /* Sem cor de fundo fixa */
+
+  .assunto h2 {
+    font-size: 4.5vw;
   }
-  
-  .container-conteudo-texto {
-    position: relative; /* Permite z-index funcionar */
-    z-index: 2; /* Garante que fique acima da imagem */
-    background-color: #E4C40B; /* Amarelo milho */
-    width: 70%; /* O texto ocupa 70% da largura da caixa */
-    min-height: 72.9vh; /* Altura mínima */
-    padding: 2vh 2vw; /* Espaçamento interno */
-    box-sizing: border-box; /* Inclui padding na largura total */
-    border-radius: 1vw; /* Bordas arredondadas */
-    display: flex; /* Layout flexível */
-    flex-direction: column; /* Empilha os filhos verticalmente */
-    justify-content: space-between; /* Espaço entre título, texto e botão */
+
+  .assunto p {
+    font-size: 4vw;
   }
-  
-  .imagem-milho {
-    position: absolute; /* Posiciona sobreposta à direita */
-    top: 0;
-    right: 0;
-    width: 50%; /* Ocupa metade da largura */
-    height: 100%; /* Toda a altura do container */
-    object-fit: cover; /* Cobre toda a área mantendo proporção */
-    z-index: 1; /* Fica atrás do texto */
-  }
-  
-  .titulo {
-    font-weight: bold;
-    font-size: 2.4vw; /* Tamanho do título proporcional */
-    margin-bottom: 1vh; /* Espaço inferior */
-  }
-  
-  .texto {
-    font-size: 1.4vw;
-    font-weight: 450;
-    color: #000; /* Texto preto */
-    flex: 1; /* Ocupa o espaço restante */
-    margin-bottom: 2vh;
-  }
-  
+
   .botao {
-    background-color: #5DB41A; /* Verde vivo */
-    color: white;
-    padding: 1vh 2vw;
-    border: none;
-    border-radius: 0.5vw;
-    cursor: pointer; /* Muda cursor ao passar por cima */
-    font-size: 1.2vw;
-    width: fit-content; /* Só ocupa o espaço necessário */
-    transition: background-color 0.3s ease; /* Animação suave no hover */
-  }
-  
-  .botao:hover {
-    background-color: #005C00; /* Fica verde escuro ao passar o mouse */
+    font-size: 4vw;
   }
 
-  .botao2 {
-    background-color: #5DB41A;
-    color: white;
-    padding: 1vh 2vw;
-    border: none;
-    border-radius: 0.5vw;
-    cursor: pointer;
-    font-size: 1.2vw;
-    width: fit-content;
-    transition: background-color 0.3s ease;
+  .botoes-abaixo {
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
   }
-  
-  .botao2:hover {
-    background-color: #005C00;
+}
+
+/* ============ RESPONSIVIDADE ============ */
+@media (max-width: 768px) {
+  .titulo-principal {
+    font-size: 6vw;
   }
 
-  .botoes-alinhados{
-    display: flex;
-    gap: 14vw;
-    justify-content: flex-start;
-    margin: 1vh;
+  .assunto {
+    flex: 1 1 100%;
+    max-width: 90%;
+    margin-bottom: 3vh;
   }
-  
-  /* --------------------------- */
-  /* 📱 RESPONSIVIDADE (TELAS PEQUENAS) 📱 */
-  /* --------------------------- */
-  @media (max-width: 768px) {
-    .conteudo {
-      width: 90vw; /* Quase toda a tela */
-      min-height: auto; /* Altura flexível */
-      flex-direction: column;
-      overflow: hidden;
-    }
-  
-    .container-conteudo-texto {
-      width: 100%;
-      border-radius: 1vh;
-      padding: 4vh 4vw;
-    }
-  
-    .imagem-milho {
-      position: relative;
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      margin-top: 0;
-      display: block;
-      border-bottom-left-radius: 1vh;
-      border-bottom-right-radius: 1vh;
-    }
-  
-    .titulo {
-      font-size: 5vw;
-    }
-  
-    .texto {
-      font-size: 4vw;
-    }
-  
-    .botao {
-      font-size: 4vw;
-      padding: 1.5vh 4vw;
-    }
+
+  .assunto h2 {
+    font-size: 4.5vw;
   }
-  
+
+  .assunto p {
+    font-size: 3.5vw;
+  }
+
+  .botao {
+    font-size: 4vw;
+    padding: 1.5vh 4vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-assuntos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .titulo-principal {
+    font-size: 7vw;
+  }
+
+  .botao {
+    font-size: 4.5vw;
+    padding: 2vh 5vw;
+  }
+}
